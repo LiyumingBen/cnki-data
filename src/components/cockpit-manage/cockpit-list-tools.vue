@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2022-05-31 16:21:28
  * @LastEditors: LYM
- * @LastEditTime: 2022-05-31 19:04:33
+ * @LastEditTime: 2022-05-31 19:20:29
  * @Description: Please set Description
 -->
 <template>
@@ -31,10 +31,22 @@
     </el-tooltip>
   </div>
   <div v-show="tabType === 'me-cockpit'" class="btn delete">
-    <el-tooltip content="删除" placement="bottom" effect="light">
-      <IconDeleteWitheLine v-if="isIconType" class="icon" />
-      <IconDeleteLine v-else class="icon" />
-    </el-tooltip>
+    <el-popconfirm
+      confirm-button-text="确认"
+      cancel-button-text="取消"
+      :icon="InfoFilled"
+      icon-color="#626AEF"
+      title="是否确定删除选中内容？"
+      @confirm="handleDelete"
+      @cancel="handleCancelDelete"
+    >
+      <template #reference>
+        <el-tooltip content="删除" placement="bottom" effect="light">
+          <IconDeleteWitheLine v-if="isIconType" class="icon" />
+          <IconDeleteLine v-else class="icon" />
+        </el-tooltip>
+      </template>
+    </el-popconfirm>
   </div>
 </template>
 
@@ -53,9 +65,20 @@ import {
   IconCloneWitheLine,
 } from '@/icons'
 import { useCockpitManageStore } from '@/store/cockpit-mange'
+import { InfoFilled } from '@element-plus/icons-vue'
 
 const cockpitMangeStore = useCockpitManageStore()
 const { isIconType, tabType } = storeToRefs(cockpitMangeStore)
+
+// 删除
+const handleDelete = () => {
+  console.log('enter handleDelete')
+}
+
+// 取消删除
+const handleCancelDelete = () => {
+  console.log('enter handleCancelDelete')
+}
 </script>
 
 <style lang="scss" scoped>

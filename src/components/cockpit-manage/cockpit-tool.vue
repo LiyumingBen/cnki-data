@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2022-05-26 21:27:37
  * @LastEditors: LYM
- * @LastEditTime: 2022-05-31 17:27:57
+ * @LastEditTime: 2022-05-31 19:19:46
  * @Description: 驾驶舱管理工具栏
 -->
 <template>
@@ -64,7 +64,6 @@
 import { ref, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { Search, InfoFilled } from '@element-plus/icons-vue'
-import 'element-plus/es/components/message/style/css'
 import {
   IconFileAddLine,
   IconFolderAddLine,
@@ -86,7 +85,7 @@ const handleGetCockpitList = () => {
   console.log('get cockpit list', searchVal)
 }
 
-// 删除文件夹或驾驶舱
+// 删除
 const handleDelete = () => {
   console.log('enter handleDelete')
 }
