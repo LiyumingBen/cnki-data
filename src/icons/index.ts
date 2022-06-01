@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2022-05-26 14:16:26
  * @LastEditors: LYM
- * @LastEditTime: 2022-05-31 11:33:20
+ * @LastEditTime: 2022-06-01 08:32:51
  * @Description: Please set Description
  */
 import IconSearchLine from './search-line.vue'
@@ -34,6 +34,7 @@ import IconCloneLine from './clone-line.vue'
 import IconCloneWitheLine from './clone-withe-line.vue'
 import IconPublished from './published-line.vue'
 import IconNoYetPublished from './no-yet-published.vue'
+import E404 from './e404-page.vue'
 
 export {
   IconSearchLine,
@@ -65,4 +66,5 @@ export {
   IconDeleteWitheLine,
   IconPublished,
   IconNoYetPublished,
+  E404,
 }

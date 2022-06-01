@@ -2,12 +2,10 @@
  * @Author: LYM
  * @Date: 2022-04-12 11:12:09
  * @LastEditors: LYM
- * @LastEditTime: 2022-05-26 16:12:43
+ * @LastEditTime: 2022-06-01 08:40:08
  * @Description: 路由配置
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-
-import Layout from '@/layout/index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -16,9 +14,20 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/login/index.vue'),
   },
   {
+    path: '/cockpit-construct',
+    name: 'CockpitConstruct',
+    component: () => import('@/views/cockpit-construct/index.vue'),
+  },
+  {
     path: '/',
-    name: 'Home',
-    component: Layout,
+    name: 'Layout',
+    component: () => import('@/layout/index.vue'),
+  },
+  {
+    path: '/:catchAll(.*)*',
+    name: 'NotFound',
+    component: () => import('@/views/e404/index.vue'),
+    meta: { title: '找不到页面' },
   },
 ]
 
